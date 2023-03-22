@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            background-color: aliceblue;
+            display: flex;
+            height: 90vh;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .game{
+            /* position: absolute; */
+            background-color: red;
+            color: white;
+            width: 200px;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .princesStart{
+            width: 40%;
+        }
+        .gameStart{
+            display: none;
+        }
+        .game button:hover{
+            transform: scale(1.2);
+        }
+        .gameBackground{
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            height: 500px;
+            width: 100%;
+            /* background-color: aquamarine; */
+            animation: waves linear  2s infinite;
+        }
+
+        .start{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 500px;
+            width: 30px;
+            background-color: red;
+            position: absolute;
+            left: 100px;
+        }
+        .start p{
+            transform: rotate(90deg);
+        }
+        .end{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 500px;
+            width: 30px;
+            background-color: red;
+            position: absolute;
+            right: 100px;
+        }
+
+        .princess{
+            width: 50px;
+            /* left: 0; */
+            position: absolute;
+        }
+        .end p{
+            transform: rotate(90deg);
+        }
+        @keyframes waves {
+            0%{
+                /* width: 1px; */
+                background: rgb(68, 68, 153);
+            }
+            50%{
+                background: rgb(49, 89, 164);
+            }
+            100%{
+                background: rgb(46, 46, 164);
+            }
+        }
+        .timer{
+            position: absolute;
+            background-color: red;
+            right: 10px;
+            top: 10px;
+        }
+        .closed{display: none;}
+    </style>
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="pool gameBackground">
+        <div class="timer" id="timer">Stop</div>
+        <div class="start">
+            <p>Start</p>
+        </div>
+        <div class="end">
+            <p>Finish</p>
+        </div>
+        
+        <img src="./asset/bstoped.gif" alt="" class="closed" id="princess">
+        <div class="game" id="menu">
+            <img class="princesStart" src="./asset/bfront.gif"/>
+            <div class="help">
+                <li>W - Cima</li>
+                <li>S - Baixo</li>
+                <li>A - Esquerda</li>
+                <li>D - Direita</li>
+            </div>
+            <button onclick="startHandler()">Start</button>
+        </div>
+        <!-- <img src="" alt="princess"/> -->
+    </div>
+</body>
+<script src="./main.js"></script>
+</html>
